@@ -1,0 +1,137 @@
+ion-content::part(background) {
+    background: url("../../assets/icon/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #container {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
+    transform: translateY(-50%);
+    padding: 0 2rem;
+  
+    .logo-container {
+      padding-bottom: 2.4rem;
+  
+      .logo-image {
+        width: 10rem;
+        height: 9rem;
+        margin: auto;
+        background: url("../../assets/icon/logo.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+  
+      .logo-subtitle {
+        display: none;
+      }
+    }
+  
+    .login-container {
+      padding: 1.6rem;
+      background-color: #ffffff;
+  
+      ion-item::part(native) {
+        padding-left: 0;
+  
+        div.item-inner {
+          padding-right: 0;
+        }
+      }
+  
+      ion-icon {
+        padding-right: .8rem;
+      }
+  
+      span.error {
+        display: flex;
+        background: #ffc10782;
+        padding: 0.8rem;
+        margin-top: .8rem;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        align-items: center;
+  
+        ion-icon {
+          padding-right: .8rem;
+        }
+      }
+  
+      .remember-password-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: .8rem;
+        font-size: large;
+  
+        ion-toggle {
+          padding-right: 0;
+        }
+      }
+    }
+  
+    .login-button {
+      display: none;
+      margin: 0;
+    }
+  
+    .small-login-button-container {
+      // padding-top: 1.6rem;
+  
+      ion-button.small-login-button {
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        margin: 0;
+        width: 100%;
+        // --border-radius: 1.6rem;
+        // --color: #000;
+        --color: rgba(255, 255, 255, 0.925);
+        background-color: #0279c8;
+        // --border-color: #0279c8;
+        --padding-end: 3.2rem;
+        --padding-start: 3.2rem;
+      }
+    }
+  }
+  
+  @media (min-width: 960px) {
+  
+    #container {
+      max-width: 40rem;
+      position: relative;
+      margin: auto;
+      margin-top: 10rem;
+      transform: none;
+  
+      .logo-container {
+        padding-top: 2.4rem;
+        padding-bottom: .8rem;
+        background-color: #ffffff;
+  
+        .logo-subtitle {
+          display: block;
+          padding-top: 1.6rem;
+          font-size: 1.8rem;
+          line-height: 2rem;
+          font-weight: 700;
+        }
+      }
+  
+      .login-button {
+        display: block;
+        margin: 0;
+      }
+  
+      .small-login-button-container {
+        display: none;
+      }
+    }
+  }
