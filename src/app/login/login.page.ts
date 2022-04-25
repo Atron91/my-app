@@ -16,7 +16,7 @@ export class LoginPage {
 
   constructor(
     public formBuilder: FormBuilder,
-    public loginUtilsService: LoginUtilsService,
+    private loginUtilsService: LoginUtilsService,
     private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
@@ -29,7 +29,7 @@ export class LoginPage {
     this.isSubmitted = true;
     if (this.loginForm.valid && this.loginUtilsService.validatePassword(this.loginForm.controls['password'].value)) {
       this.router.navigateByUrl("/home");
-      console.log('OK venga');
+      
     } else {
       console.log('Por favor rellena los campos correctamente');
     }

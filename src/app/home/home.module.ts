@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { LoginUtilsService } from '../../services/login-utils.service';
+import { SessionDataService } from 'src/services/session-data.service';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { LoginUtilsService } from '../../services/login-utils.service';
     
 
   ],
-  providers: [LoginUtilsService],
+  providers: [LoginUtilsService, SessionDataService],
   declarations: [HomePage]
 })
 export class HomePageModule {}

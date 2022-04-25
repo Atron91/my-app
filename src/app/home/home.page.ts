@@ -1,41 +1,28 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginUtilsService } from '../../services/login-utils.service';
+import { Component, OnInit } from '@angular/core';
+
+import { SessionData } from 'src/services/models/session-data.model';
+import { SessionDataService } from 'src/services/session-data.service';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  loginForm: FormGroup;
-  isSubmitted = false;
+  data: SessionData = null;
 
   constructor(
-    public formBuilder: FormBuilder,
-    public loginUtilsService: LoginUtilsService
-  ) {
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(5)]],
-    });
-  }
-
-  doLogin() {
-    this.isSubmitted = true;
-    if (this.loginForm.valid && this.loginUtilsService.validatePassword(this.loginForm.controls['password'].value)) {
-      console.log('OK venga');
-    } else {
-      console.log('Por favor rellena los campos correctamente');
-    }
-  }
-
-  get errorControl() {
-    return this.loginForm.controls;
+    private sessionDataService: SessionDataService
+  ){}
+   
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
+    this.data = this.sessionDataService.getSessionData()
+      
   }
   
-  private validatePassword(): boolean {
-    return this.loginForm.controls['password'].value.length === 6;
-  }
 }

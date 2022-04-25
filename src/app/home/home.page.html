@@ -1,47 +1,21 @@
-<ion-content>
-  <form [formGroup]="loginForm" (ngSubmit)="doLogin()" novalidate>
-    <div id="container">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-      <div class="logo-container">
-        <div class="logo-image"></div>
-        <div class="logo-subtitle">Prueba técnica</div>
-      </div>
-
-      <div class="login-container">
-        <ion-item>
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-input type="email" placeholder="Email" formControlName="email" required></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <ion-input type="password" placeholder="Contraseña" formControlName="password" required></ion-input>
-        </ion-item> 
-
-        <!-- Mensajes de error email -->
-        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
-          <ion-icon name="warning-outline"></ion-icon> El email es oblligatorio.
-        </span>
-        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.email">
-          <ion-icon name="warning-outline"></ion-icon> El email es incorrecto, por favor revise.
-        </span> 
-
-        <!-- Mensajes de error password -->
-        <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">
-          <ion-icon name="warning-outline"></ion-icon> Introduce una contraseña.
-        </span>
-        <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
-          <ion-icon name="warning-outline"></ion-icon> La contraseña debe tener al menos 5 caracteres.
-        </span>
-
-        <div class="remember-password-container">
-          <div class="font-bold">Recordar</div>
-          <ion-toggle color="dark"></ion-toggle>
-        </div>
-
-      </div>
-      <div class="small-login-button-container"><ion-button expand="small" type="submit" fill="outline" class="small-login-button">Acceder</ion-button></div>
-      <ion-button expand="full" type="submit" class="login-button" color="secondary">Acceder</ion-button>
-    </div>
-   </form>
+<ion-content class="ion-padding">
+  <ion-avatar>
+    <img src="assets/icon/mobil2016.jpg" alt="">
+  </ion-avatar>
+    <ion-card-content>
+      
+      <ion-item class="box">{{this.data.name}}</ion-item>
+      <ion-item class="box">{{this.data.mail}}</ion-item>
+      <ion-item class="box">{{this.data.age}}</ion-item>
+      <ion-item class="box">{{this.data.direction}}</ion-item>
+      <ion-item class="box">{{this.data.nationality}}</ion-item>
+    </ion-card-content>
+  
+  
 </ion-content>
