@@ -1,21 +1,67 @@
-<ion-header>
+
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>Datos de usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-avatar>
+
+<app-menu></app-menu>
+
+<ion-content class="ion-padding" id="primary">
+  <div class="logo-container">
     <img src="assets/icon/mobil2016.jpg" alt="">
-  </ion-avatar>
-    <ion-card-content>
-      
-      <ion-item class="box">{{this.data.name}}</ion-item>
-      <ion-item class="box">{{this.data.mail}}</ion-item>
-      <ion-item class="box">{{this.data.age}}</ion-item>
-      <ion-item class="box">{{this.data.direction}}</ion-item>
-      <ion-item class="box">{{this.data.nationality}}</ion-item>
-    </ion-card-content>
+  </div>
+  <ion-card-content class="ventana">
+    <ion-list>
+      <ion-item>
+        <ion-label>{{this.data.name}}</ion-label>
+        <ion-note slot="end">Name</ion-note>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>{{this.data.mail}}</ion-label>
+        <ion-note slot="end">Email</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>{{this.data.age}}</ion-label>
+        <ion-note slot="end">Age</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>{{this.data.direction}}</ion-label>
+        <ion-note slot="end">Direction</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>{{this.data.nationality}}</ion-label>
+        <ion-note slot="end">Nationality</ion-note>
+      </ion-item>
+    </ion-list>
+    
+  </ion-card-content>
+  <ion-button (click)="showService()">Servicios disponibles</ion-button>
+    <ng-container *ngIf="showServices">
+
+      <ng-container *ngFor="let service of services.services">
+        <ng-container>
+          <ion-list>
+            <ion-item>
+              <ion-label>{{service.name}}</ion-label>
+              <ion-label>{{service.price}}€</ion-label>
+            </ion-item>
+          </ion-list>
+        </ng-container>
+      </ng-container>
+
+    </ng-container>
   
   
+   
 </ion-content>

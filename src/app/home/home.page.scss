@@ -9,5 +9,26 @@ ion-content::part(background) {
 .box {
   width: 500px;
   margin: auto;
-  border: 3px solid #73AD21;
+  border: 3px solid #fafaf9;
+}
+
+.logo-container {
+  max-width: 40rem;
+  position: relative;
+  margin: auto;
+  margin-top: 1rem;
+  transform: none;
+  padding-top: 0.8rem;
+  padding-bottom: .5rem;
+  background-color: #ffffff;
+}
+.ventana {
+  max-width: 28rem;
+  position: relative;
+  margin: auto;
+  margin-top: 1rem;
+  transform: none;
+  padding-top: 0.8rem;
+  padding-bottom: .5rem;
+  background-color: #ffffff;
 }

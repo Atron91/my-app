@@ -15,4 +15,4 @@ export class SessionDataService {
         return data;
     }
     
-}
+};
